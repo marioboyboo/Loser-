@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Infinite Audio Loop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:black;
+  color:white;
+  font-family:sans-serif;
+  text-align:center;
+}
+
+button{
+  font-size:30px;
+  padding:20px 40px;
+  border:none;
+  border-radius:15px;
+  background:#00ff9d;
+  color:black;
+  cursor:pointer;
+}
+
+button:active{
+  transform:scale(0.95);
+}
+</style>
+</head>
+<body>
+
+<div>
+  <h1>Press to Start</h1>
+  <button onclick="start()">PLAY</button>
+</div>
+
+<audio id="sound" loop>
+  <source src="data:audio/mp4;base64,AAAAGGZ0eXBpc29tAAACAGlzb21pc28ybXA0MQAAAwBtZGF0AAAAAA..." type="audio/mp4">
+</audio>
+
+<script>
+function start(){
+  const audio = document.getElementById("sound");
+  audio.play();
+}
+</script>
+
+</body>
+</html>
