@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Audio Loop</title>
+<title>Audio Player</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -12,33 +12,46 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+  flex-direction:column;
   background:black;
   color:white;
   font-family:sans-serif;
-  text-align:center;
+}
+
+button{
+  font-size:28px;
+  padding:20px 40px;
+  border:none;
+  border-radius:12px;
+  background:#00ff9d;
+  color:black;
+  cursor:pointer;
+}
+
+button:active{
+  transform:scale(0.95);
 }
 
 h1{
-  font-size:40px;
+  margin-bottom:30px;
 }
 </style>
 </head>
 <body>
 
-<h1>Playing...</h1>
+<h1>Audio Player</h1>
 
-<audio id="loopAudio" autoplay loop>
+<button onclick="playAudio()">PLAY</button>
+
+<audio id="loopAudio" loop>
   <source src="Voice 260306_162736.m4a" type="audio/mp4">
 </audio>
 
 <script>
-const audio = document.getElementById("loopAudio");
-
-function forcePlay(){
-  audio.play().catch(()=>{});
+function playAudio(){
+  const audio = document.getElementById("loopAudio");
+  audio.play();
 }
-
-setInterval(forcePlay, 500);
 </script>
 
 </body>
